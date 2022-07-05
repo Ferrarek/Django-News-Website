@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Son Dakika</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+    		<div class=".col-xl-15">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				  <div class="container-fluid">
+				    <a class="navbar-brand" href="{{haberler.id}}">Son Haberler</a>
+				    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				        <li class="nav-item">
+				          <a class="nav-link active" aria-current="page" href="{{haberler.id}}">Bugun</a>
+				        </li>
+				        <li class="nav-item">
+				          <a class="nav-link" href="{{haberler.id}}">Gecmis Haberler</a>
+				        </li>
+
+				      </ul>
+				      <form class="d-flex" role="search">
+				        <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search">
+				        <button class="btn btn-outline-light" type="submit">Ara</button>
+				      </form>
+				    </div>
+				  </div>
+				</nav>
+    		</div>
+    	</div>
+	<div class="row">
+    		<div class="col-xl-14">
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				  <div class="carousel-inner">
+				    <div class="carousel-item active">
+				      <img src="https://i01.sozcucdn.com/wp-content/uploads/2017/04/sur-sondakika-69.jpg" class="d-block w-100" alt="...">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="https://i.hbrcdn.com/manset/2022/06/26/avukatlardan-kacak-gocmenlerin-sinir-disi_15039443_1267_z1.jpg" class="d-block w-100" alt="...">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="https://i.hbrcdn.com/manset/2022/06/25/acun-ilicali-fenerbahce-den-yeni-transferini-ove_15039422_8885_z1.jpg" class="d-block w-100" alt="...">
+				    </div>
+					  <div class="carousel-item">
+				      <img src="https://i.hbrcdn.com/manset/2022/06/26/kurtlar-vadisi-severleri-yikan-haber-deve_15039460_121_z6.jpg" class="d-block w-100" alt="...">
+				    </div>
+					  <div class="carousel-item">
+				      <img src="https://i.hbrcdn.com/manset/2022/06/26/siddetli-yagis-geliyor-afad-ozellikle-3-ili_15039455_8941_z2.jpg" class="d-block w-100" alt="...">
+				    </div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+
+
+				</div>
+    		</div>
+	</div>
+
+
+	</div>
+</div>
+
+	<div class="row">
+    		<div class="col-md-15">
+    			<h1 class="text-center text-dark py-4">Son Dakika Haberleri</h1>
+    			<hr>
+    		</div>
+    	</div>
+		<div class="row">
+			{% for haber in haberler %}
+    		<div class="col-md-4">
+    			<div class="card">
+				  <img src={{ haber.resim }} class="card-img-top" alt="...">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ haber.baslik }} {{ haber.zaman }}</h5>
+				    <p class="card-text">{{ doktor.sehir }}</p>
+				    <a href={{haber.id}} class="btn btn-primary" style="width:100%">Habere Goz at</a>
+				  </div>
+				</div>
+    		</div>
+			{% endfor %}
+    	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
